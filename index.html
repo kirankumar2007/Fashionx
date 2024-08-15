@@ -19,8 +19,17 @@
                     <li><a href="#accessories">Accessories</a></li>
                 </ul>
             </nav>
-            <div class="cart-icon" onclick="toggleCart()">
-                🛒 <span class="cart-count">0</span>
+            <div class="user-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                    <button>🔍</button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span class="cart-count">0</span>
+                </div>
+                <div class="user-icon" onclick="toggleUserMenu()">
+                    👤
+                </div>
             </div>
         </div>
     </header>
@@ -34,41 +43,34 @@
     </div>
 
     <main>
-        <h2 class="section-title">Featured Products</h2>
-        <div class="featured-products">
-            <div class="product-card">
-                <img src="/api/placeholder/300/400" alt="Product 1">
-                <div class="product-info">
-                    <h3 class="product-title">Stylish T-Shirt</h3>
-                    <p class="product-price">$29.99</p>
-                    <button class="add-to-cart" onclick="addToCart('Stylish T-Shirt', 29.99)">Add to Cart</button>
+        <section class="featured-products">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid" id="featured-products-grid">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </section>
+
+        <section class="categories">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="filterProducts('men')">
+                    <img src="/api/placeholder/300/200" alt="Men's Fashion">
+                    <h3>Men's Fashion</h3>
+                </div>
+                <div class="category-card" onclick="filterProducts('women')">
+                    <img src="/api/placeholder/300/200" alt="Women's Fashion">
+                    <h3>Women's Fashion</h3>
+                </div>
+                <div class="category-card" onclick="filterProducts('kids')">
+                    <img src="/api/placeholder/300/200" alt="Kids' Fashion">
+                    <h3>Kids' Fashion</h3>
+                </div>
+                <div class="category-card" onclick="filterProducts('accessories')">
+                    <img src="/api/placeholder/300/200" alt="Accessories">
+                    <h3>Accessories</h3>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="/api/placeholder/300/400" alt="Product 2">
-                <div class="product-info">
-                    <h3 class="product-title">Trendy Jeans</h3>
-                    <p class="product-price">$59.99</p>
-                    <button class="add-to-cart" onclick="addToCart('Trendy Jeans', 59.99)">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="/api/placeholder/300/400" alt="Product 3">
-                <div class="product-info">
-                    <h3 class="product-title">Elegant Dress</h3>
-                    <p class="product-price">$79.99</p>
-                    <button class="add-to-cart" onclick="addToCart('Elegant Dress', 79.99)">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="/api/placeholder/300/400" alt="Product 4">
-                <div class="product-info">
-                    <h3 class="product-title">Casual Shoes</h3>
-                    <p class="product-price">$49.99</p>
-                    <button class="add-to-cart" onclick="addToCart('Casual Shoes', 49.99)">Add to Cart</button>
-                </div>
-            </div>
-        </div>
+        </section>
     </main>
 
     <div class="newsletter">
@@ -81,7 +83,29 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 FashionX. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>FashionX is your one-stop shop for the latest fashion trends.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@fashionx.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FashionX. All rights reserved.</p>
+        </div>
     </footer>
 
     <div id="cart-modal" class="modal">
@@ -90,6 +114,21 @@
             <h2>Your Cart</h2>
             <ul id="cart-items"></ul>
             <p id="cart-total">Total: $0.00</p>
+            <button onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div id="user-menu" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleUserMenu()">&times;</span>
+            <h2>User Menu</h2>
+            <ul>
+                <li><a href="#profile">My Profile</a></li>
+                <li><a href="#orders">My Orders</a></li>
+                <li><a href="#wishlist">Wishlist</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
         </div>
     </div>
 

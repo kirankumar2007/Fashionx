@@ -3,7 +3,10 @@
     --secondary-color: #3f51b5;
     --text-color: #333;
     --background-color: #f5f5f5;
+    --card-background: #ffffff;
+    --hover-color: #e91e63;
 }
+
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
@@ -11,8 +14,9 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
+
 header {
-    background-color: white;
+    background-color: var(--card-background);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
@@ -20,6 +24,7 @@ header {
     right: 0;
     z-index: 1000;
 }
+
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -28,28 +33,65 @@ header {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .logo {
     font-size: 2rem;
     font-weight: bold;
     color: var(--primary-color);
 }
+
 nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
 }
+
 nav ul li {
     margin: 0 1rem;
 }
+
 nav ul li a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s ease;
 }
+
 nav ul li a:hover {
     color: var(--primary-color);
 }
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    margin-right: 1rem;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.cart-icon, .user-icon {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
 .hero {
     background-image: url('/api/placeholder/1200/400');
     background-size: cover;
@@ -60,6 +102,7 @@ nav ul li a:hover {
     justify-content: center;
     margin-top: 60px;
 }
+
 .hero-content {
     text-align: center;
     color: white;
@@ -67,10 +110,12 @@ nav ul li a:hover {
     padding: 2rem;
     border-radius: 8px;
 }
+
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
+
 .cta-button {
     background-color: var(--primary-color);
     color: white;
@@ -81,51 +126,62 @@ nav ul li a:hover {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .cta-button:hover {
-    background-color: #e91e63;
+    background-color: var(--hover-color);
 }
+
 main {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 2rem;
 }
+
 .section-title {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
 }
-.featured-products {
+
+.product-grid, .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
 }
-.product-card {
-    background-color: white;
+
+.product-card, .category-card {
+    background-color: var(--card-background);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
-.product-card:hover {
+
+.product-card:hover, .category-card:hover {
     transform: translateY(-5px);
 }
-.product-card img {
+
+.product-card img, .category-card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
 }
-.product-info {
+
+.product-info, .category-card h3 {
     padding: 1rem;
 }
+
 .product-title {
     font-size: 1.2rem;
     margin: 0 0 0.5rem 0;
 }
+
 .product-price {
     font-weight: bold;
     color: var(--primary-color);
 }
+
 .add-to-cart {
     background-color: var(--secondary-color);
     color: white;
@@ -138,23 +194,28 @@ main {
     width: 100%;
     margin-top: 0.5rem;
 }
+
 .add-to-cart:hover {
-    background-color: #303f9f;
+    background-color: var(--hover-color);
 }
+
 .newsletter {
     background-color: var(--secondary-color);
     color: white;
     padding: 4rem 2rem;
     text-align: center;
 }
+
 .newsletter h2 {
     margin-bottom: 1rem;
 }
+
 .newsletter-form {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
 }
+
 .newsletter-form input {
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -162,6 +223,7 @@ main {
     border-radius: 4px 0 0 4px;
     width: 300px;
 }
+
 .newsletter-form button {
     background-color: var(--primary-color);
     color: white;
@@ -172,33 +234,55 @@ main {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .newsletter-form button:hover {
-    background-color: #e91e63;
+    background-color: var(--hover-color);
 }
+
 footer {
     background-color: #333;
     color: white;
-    text-align: center;
-    padding: 2rem;
+    padding: 2rem 0;
 }
-.cart-icon {
-    position: relative;
-    cursor: pointer;
-}
-.cart-count {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
+
+.footer-content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
+
+.footer-section {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #555;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -209,14 +293,16 @@ footer {
     height: 100%;
     background-color: rgba(0,0,0,0.5);
 }
+
 .modal-content {
-    background-color: white;
+    background-color: var(--card-background);
     margin: 15% auto;
     padding: 2rem;
     border-radius: 8px;
     max-width: 500px;
     position: relative;
 }
+
 .close {
     position: absolute;
     right: 1rem;
@@ -224,17 +310,34 @@ footer {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
 #cart-items {
     list-style-type: none;
     padding: 0;
 }
+
 #cart-items li {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem;
 }
+
 #cart-total {
     font-weight: bold;
     text-align: right;
     margin-top: 1rem;
+}
+
+#user-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#user-menu ul li {
+    margin-bottom: 1rem;
+}
+
+#user-menu ul li a {
+    color: var(--text-color);
+    text-decoration: none;
 }
