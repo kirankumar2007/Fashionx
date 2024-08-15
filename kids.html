@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women's Fashion - FashionX</title>
+    <title>Kids' Fashion - FashionX</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,14 +37,14 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Women's Fashion</h1>
-                <p>Discover elegant and trendy styles for women</p>
+                <h1>Kids' Fashion</h1>
+                <p>Fun and trendy styles for kids of all ages</p>
             </div>
         </section>
 
         <section class="product-section">
-            <div class="product-grid" id="womens-products-grid">
-                <!-- Women's products will be dynamically added here -->
+            <div class="product-grid" id="kids-products-grid">
+                <!-- Kids' products will be dynamically added here -->
             </div>
         </section>
     </main>
@@ -71,35 +71,37 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 FashionX. All rights reserved.</p>
+            <p>&copy; 2024 FashionX.
+                <p>&copy; 2024 FashionX. All rights reserved.</p>
+            </div>
+        </footer>
+    
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleCart()">&times;</span>
+                <h2>Your Cart</h2>
+                <ul id="cart-items"></ul>
+                <p id="cart-total">Total: $0.00</p>
+                <button onclick="checkout()">Proceed to Checkout</button>
+            </div>
         </div>
-    </footer>
-
-    <div id="cart-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="toggleCart()">&times;</span>
-            <h2>Your Cart</h2>
-            <ul id="cart-items"></ul>
-            <p id="cart-total">Total: $0.00</p>
-            <button onclick="checkout()">Proceed to Checkout</button>
+    
+        <div id="user-menu" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleUserMenu()">&times;</span>
+                <h2>User Menu</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="kids.html">Kids</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-
-    <div id="user-menu" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="toggleUserMenu()">&times;</span>
-            <h2>User Menu</h2>
-            <ul>
-                <li><a href="index.html#profile">My Profile</a></li>
-                <li><a href="index.html#orders">My Orders</a></li>
-                <li><a href="index.html#wishlist">Wishlist</a></li>
-                <li><a href="index.html#settings">Settings</a></li>
-                <li><a href="#" onclick="logout()">Logout</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-    <script src="women.js"></script>
-</body>
-</html>
+    
+        <script src="script.js"></script>
+        <script src="kids.js"></script>
+    </body>
+    </html>
+    
