@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Fashion - FashionX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">FashionX</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="index.html#women">Women</a></li>
+                    <li><a href="index.html#kids">Kids</a></li>
+                    <li><a href="index.html#accessories">Accessories</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                    <button>🔍</button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span class="cart-count">0</span>
+                </div>
+                <div class="user-icon" onclick="toggleUserMenu()">
+                    👤
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Women's Fashion</h1>
+                <p>Discover elegant and trendy styles for women</p>
+            </div>
+        </section>
+
+        <section class="product-section">
+            <div class="product-grid" id="womens-products-grid">
+                <!-- Women's products will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>FashionX is your one-stop shop for the latest fashion trends.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@fashionx.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FashionX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: $0.00</p>
+            <button onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div id="user-menu" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleUserMenu()">&times;</span>
+            <h2>User Menu</h2>
+            <ul>
+                <li><a href="index.html#profile">My Profile</a></li>
+                <li><a href="index.html#orders">My Orders</a></li>
+                <li><a href="index.html#wishlist">Wishlist</a></li>
+                <li><a href="index.html#settings">Settings</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="women.js"></script>
+</body>
+</html>
