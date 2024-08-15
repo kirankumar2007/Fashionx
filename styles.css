@@ -341,3 +341,90 @@ footer {
     color: var(--text-color);
     text-decoration: none;
 }
+/* Quick View Modal Styles */
+#quick-view-modal .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+#quick-view-modal img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+#quick-view-modal .product-title, #quick-view-modal .product-price {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* User Profile Modal Styles */
+#profile-modal .modal-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    max-width: 600px;
+}
+
+#profile-modal label {
+    margin-top: 1rem;
+}
+
+#profile-modal input {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+#profile-modal button {
+    margin-top: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Cart Modal Styles */
+#cart-modal .modal-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    max-width: 400px;
+}
+
+#cart-modal ul {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-modal li {
+    margin-bottom: 1rem;
+}
+
+/* User Menu Styles */
+#user-menu .modal-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    max-width: 300px;
+}
+
+#user-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#user-menu li {
+    margin-bottom: 1rem;
+}
+
+#user-menu a {
+    text-decoration: none;
+    color: #007bff;
+}
