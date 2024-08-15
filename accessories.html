@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories - FashionX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">FashionX</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="kids.html">Kids</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                    <button>🔍</button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span class="cart-count">0</span>
+                </div>
+                <div class="user-icon" onclick="toggleUserMenu()">
+                    👤
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Accessories</h1>
+                <p>Find the perfect accessories to complement your outfit!</p>
+            </div>
+        </section>
+
+        <section class="product-section">
+            <div class="product-grid" id="accessories-products-grid">
+                <!-- Accessories products will be loaded here dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 FashionX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: $0.00</p>
+            <button onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div id="user-menu" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleUserMenu()">&times;</span>
+            <h2>User Menu</h2>
+            <ul>
+                <li><a href="#profile">My Profile</a></li>
+                <li><a href="#orders">My Orders</a></li>
+                <li><a href="#wishlist">Wishlist</a></li>
+                <li><a href="#settings">Settings</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="accessories.js"></script>
+</body>
+</html>
