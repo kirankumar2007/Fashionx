@@ -4,52 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FashionX - Your Style, Your Way</title>
-    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>FashionX</h1>
+        <div class="header-content">
+            <div class="logo">FashionX</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#men">Men</a></li>
+                    <li><a href="#women">Women</a></li>
+                    <li><a href="#kids">Kids</a></li>
+                    <li><a href="#accessories">Accessories</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span class="cart-count">0</span>
+            </div>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#men">Men</a></li>
-            <li><a href="#women">Women</a></li>
-            <li><a href="#kids">Kids</a></li>
-            <li><a href="#accessories">Accessories</a></li>
-        </ul>
-    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to FashionX</h1>
+            <p>Discover the latest trends in fashion</p>
+            <button class="cta-button">Shop Now</button>
+        </div>
+    </div>
+
     <main>
-        <div class="product-grid">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="featured-products">
             <div class="product-card">
-                <img src="/api/placeholder/200/300" alt="Product 1">
-                <h3>Stylish T-Shirt</h3>
-                <p>$29.99</p>
-                <button onclick="addToCart('Stylish T-Shirt')">Add to Cart</button>
+                <img src="/api/placeholder/300/400" alt="Product 1">
+                <div class="product-info">
+                    <h3 class="product-title">Stylish T-Shirt</h3>
+                    <p class="product-price">$29.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Stylish T-Shirt', 29.99)">Add to Cart</button>
+                </div>
             </div>
             <div class="product-card">
-                <img src="/api/placeholder/200/300" alt="Product 2">
-                <h3>Trendy Jeans</h3>
-                <p>$59.99</p>
-                <button onclick="addToCart('Trendy Jeans')">Add to Cart</button>
+                <img src="/api/placeholder/300/400" alt="Product 2">
+                <div class="product-info">
+                    <h3 class="product-title">Trendy Jeans</h3>
+                    <p class="product-price">$59.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Trendy Jeans', 59.99)">Add to Cart</button>
+                </div>
             </div>
             <div class="product-card">
-                <img src="/api/placeholder/200/300" alt="Product 3">
-                <h3>Elegant Dress</h3>
-                <p>$79.99</p>
-                <button onclick="addToCart('Elegant Dress')">Add to Cart</button>
+                <img src="/api/placeholder/300/400" alt="Product 3">
+                <div class="product-info">
+                    <h3 class="product-title">Elegant Dress</h3>
+                    <p class="product-price">$79.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Elegant Dress', 79.99)">Add to Cart</button>
+                </div>
             </div>
             <div class="product-card">
-                <img src="/api/placeholder/200/300" alt="Product 4">
-                <h3>Casual Shoes</h3>
-                <p>$49.99</p>
-                <button onclick="addToCart('Casual Shoes')">Add to Cart</button>
+                <img src="/api/placeholder/300/400" alt="Product 4">
+                <div class="product-info">
+                    <h3 class="product-title">Casual Shoes</h3>
+                    <p class="product-price">$49.99</p>
+                    <button class="add-to-cart" onclick="addToCart('Casual Shoes', 49.99)">Add to Cart</button>
+                </div>
             </div>
         </div>
     </main>
+
+    <div class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with the latest trends and exclusive offers!</p>
+        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
     <footer>
         <p>&copy; 2024 FashionX. All rights reserved.</p>
     </footer>
-    
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p id="cart-total">Total: $0.00</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
