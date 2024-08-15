@@ -13,7 +13,7 @@
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#men">Men</a></li>
+                    <li><a href="men.html">Men</a></li>
                     <li><a href="#women">Women</a></li>
                     <li><a href="#kids">Kids</a></li>
                     <li><a href="#accessories">Accessories</a></li>
@@ -53,7 +53,7 @@
         <section class="categories">
             <h2 class="section-title">Shop by Category</h2>
             <div class="category-grid">
-                <div class="category-card" onclick="filterProducts('men')">
+                <div class="category-card" onclick="window.location.href='men.html'">
                     <img src="/api/placeholder/300/200" alt="Men's Fashion">
                     <h3>Men's Fashion</h3>
                 </div>
@@ -70,20 +70,6 @@
                     <h3>Accessories</h3>
                 </div>
             </div>
-        </section>
-        
-        <!-- Added Advanced Filters -->
-        <section class="filters">
-            <h2 class="section-title">Filter Products</h2>
-            <form id="filter-form">
-                <label for="min-price">Min Price:</label>
-                <input type="number" id="min-price" name="min-price" step="0.01" placeholder="0.00">
-                <label for="max-price">Max Price:</label>
-                <input type="number" id="max-price" name="max-price" step="0.01" placeholder="1000.00">
-                <label for="rating">Min Rating:</label>
-                <input type="number" id="rating" name="rating" step="0.1" min="0" max="5" placeholder="0">
-                <button type="button" onclick="applyFilters()">Apply Filters</button>
-            </form>
         </section>
     </main>
 
@@ -122,37 +108,6 @@
         </div>
     </footer>
 
-    <!-- Quick View Modal -->
-    <div id="quick-view-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="toggleQuickView()">&times;</span>
-            <div id="quick-view-content">
-                <!-- Dynamic content goes here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- User Profile Modal -->
-    <div id="profile-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="toggleProfileModal()">&times;</span>
-            <h2>User Profile</h2>
-            <form id="profile-form">
-                <label for="profile-pic">Profile Picture:</label>
-                <input type="file" id="profile-pic" name="profile-pic" accept="image/*">
-                <label for="profile-name">Name:</label>
-                <input type="text" id="profile-name" name="profile-name">
-                <label for="profile-email">Email:</label>
-                <input type="email" id="profile-email" name="profile-email">
-                <label for="profile-address">Address:</label>
-                <input type="text" id="profile-address" name="profile-address">
-                <label for="profile-password">Change Password:</label>
-                <input type="password" id="profile-password" name="profile-password">
-                <button type="submit">Save Changes</button>
-            </form>
-        </div>
-    </div>
-
     <div id="cart-modal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="toggleCart()">&times;</span>
@@ -168,7 +123,7 @@
             <span class="close" onclick="toggleUserMenu()">&times;</span>
             <h2>User Menu</h2>
             <ul>
-                <li><a href="#profile" onclick="toggleProfileModal()">My Profile</a></li>
+                <li><a href="#profile">My Profile</a></li>
                 <li><a href="#orders">My Orders</a></li>
                 <li><a href="#wishlist">Wishlist</a></li>
                 <li><a href="#settings">Settings</a></li>

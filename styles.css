@@ -428,3 +428,10 @@ footer {
     text-decoration: none;
     color: #007bff;
 }
+main{
+    margin-top: 100px;
+
+}
+.product-card{
+    margin-bottom: 10px;
+}
