@@ -85,3 +85,44 @@ function checkout() {
 function logout() {
     alert('Logged out successfully!');
 }
+// Quick View Modal Script
+const quickViewButtons = document.querySelectorAll('.quick-view-btn');
+const modal = document.getElementById('quick-view-modal');
+const modalImage = document.getElementById('modal-image');
+const modalTitle = document.getElementById('modal-title');
+const modalDescription = document.getElementById('modal-description');
+const modalPrice = document.getElementById('modal-price');
+const closeBtn = document.querySelector('.close-btn');
+
+quickViewButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    const productId = button.getAttribute('data-id');
+    // Simulate fetching product data
+    const productData = {
+      1: {
+        image: 'mens-fashion1.jpg',
+        title: 'Casual Shirt',
+        description: 'A stylish casual shirt perfect for any occasion.',
+        price: '$49.99'
+      }
+      // Add more products as needed
+    };
+    const product = productData[productId];
+    modalImage.src = product.image;
+    modalTitle.textContent = product.title;
+    modalDescription.textContent = product.description;
+    modalPrice.textContent = product.price;
+    modal.style.display = 'block';
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
