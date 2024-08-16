@@ -126,3 +126,29 @@ window.addEventListener('click', (e) => {
     modal.style.display = 'none';
   }
 });
+
+// JavaScript for adding ratings and marking FashionX's Choice
+
+document.querySelectorAll('.product-card').forEach(function(card, index) {
+    // Adding 4.5/5 rating to all products
+    const rating = document.createElement('div');
+    rating.classList.add('rating');
+    rating.innerHTML = '⭐️⭐️⭐️⭐️✰ 4.5/5';
+    card.querySelector('.product-details').appendChild(rating);
+
+    // Randomly mark some products as "FashionX's Choice"
+    if (Math.random() < 0.3) {
+        const choiceLabel = document.createElement('div');
+        choiceLabel.classList.add('fashionx-choice');
+        choiceLabel.innerText = "FashionX's Choice";
+        card.appendChild(choiceLabel);
+    }
+});
+// Function to open a quick view modal
+function openQuickView(productId) {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        showQuickViewModal(product);
+    }
+}
+
